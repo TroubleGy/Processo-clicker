@@ -15,7 +15,7 @@ namespace ProcessingClicker.Helpers.Clicker
         private bool isClicking = false;
 
         private int clickIntervalMs = 1000;
-        private Point? clickPosition = null; // ✅ Nullable — избегаем нулевой точки
+        private Point? clickPosition = null; 
         private string? windowTitle;
         private CancellationTokenSource? cancellationTokenSource;
 
@@ -35,7 +35,7 @@ namespace ProcessingClicker.Helpers.Clicker
             {
                 windowTitle = title;
 
-                // ✅ Save current cursor position immediately on Attach
+                // Save current cursor position immediately on Attach
                 clickPosition = GetCursorPosition();
                 Debug.WriteLine($"📌 Click position saved at {clickPosition.Value}");
             }
@@ -49,7 +49,7 @@ namespace ProcessingClicker.Helpers.Clicker
             targetWindowHandle = IntPtr.Zero;
             isAttached = false;
             windowTitle = null;
-            clickPosition = null; // ✅ Remove saved position
+            clickPosition = null;
         }
 
         public void SetInterval(int milliseconds)
@@ -150,4 +150,5 @@ namespace ProcessingClicker.Helpers.Clicker
         [DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
     }
+
 }
