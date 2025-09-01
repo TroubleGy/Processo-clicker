@@ -79,7 +79,7 @@ namespace ProcessoClickerGUI.Controls
         // === Private Fields ===
 
         private float hoverAnimation = 0f;
-        private System.Windows.Forms.Timer animationTimer; // ✔ Указан нужный Timer
+        private System.Windows.Forms.Timer animationTimer;
         private bool isHovered = false;
         private bool isPressed = false;
 
@@ -93,7 +93,7 @@ namespace ProcessoClickerGUI.Controls
             BackColor = Color.Transparent;
             ForeColor = TextColor;
 
-            animationTimer = new System.Windows.Forms.Timer();  // ✔ полностью указанный тип
+            animationTimer = new System.Windows.Forms.Timer();
             animationTimer.Interval = 15;
             animationTimer.Tick += (s, e) =>
             {
@@ -249,4 +249,5 @@ namespace ProcessoClickerGUI.Controls
             Invalidate();
         }
     }
+
 }
